@@ -1,0 +1,1 @@
+smtp.office365.com smtp --user=<email> --pass=<pwd> --port=587 --starttls
