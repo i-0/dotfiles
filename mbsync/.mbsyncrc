@@ -1,0 +1,71 @@
+IMAPAccount             work
+Host                    outlook.office365.com
+User                    {#email_work#}
+Pass                    {#pwd_work#}
+UseIMAPS                yes
+CertificateFile         /etc/ssl/certs/ca-certificates.crt
+
+IMAPStore               work-remote
+Account                 work
+
+MaildirStore            work-local
+Path                    ~/Mail/work/
+Inbox                   ~/Mail/work/Inbox
+
+Channel                 work
+Master                  :work-remote:
+Slave                   :work-local:
+Create                  Slave
+Expunge                 Slave
+Sync                    Pull
+Patterns                "INBOX" "Other" "Drafts" "Deleted Items"
+
+
+IMAPAccount             work2
+Host                    outlook.office365.com
+User                    {#email_work2#}
+Pass                    {#pwd_work#}
+UseIMAPS                yes
+CertificateFile         /etc/ssl/certs/ca-certificates.crt
+
+IMAPStore               work2-remote
+Account                 work2
+
+MaildirStore            work2-local
+Path                    ~/Mail/work2/
+Inbox                   ~/Mail/work2/Inbox
+
+Channel                 work2
+Master                  :work2-remote:
+Slave                   :work2-local:
+Create                  Slave
+Expunge                 Slave
+Sync                    Pull
+Patterns                "INBOX" "Other" "Drafts" "Deleted Items"
+
+
+
+IMAPAccount      gmail
+Host             imap.gmail.com
+User             {#email_google#}
+Pass             {#pwd_google#}
+UseIMAPS         yes
+CertificateFile  ~/Mail/gmail-backup/gmail.crt
+CertificateFile  ~/Mail/gmail-backup/google.crt
+CertificateFile  /usr/share/ca-certificates/mozilla/Equifax_Secure_CA.crt
+
+IMAPStore  gmail-cloud
+Account    gmail
+
+MaildirStore  gmail-backup
+Path          ~/Mail/gmail-backup/
+Inbox         ~/Mail/gmail-backup/Inbox
+
+Channel   gmail
+Master    :gmail-cloud:
+Slave     :gmail-backup:
+Create    Slave
+Expunge   Slave
+Sync      Pull
+# Exclude everything under the internal [Gmail] folder, except archived mails
+Patterns  * ![Gmail]* "[Gmail]/All Mail"
