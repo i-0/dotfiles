@@ -1,0 +1,4 @@
+Change {#<parameter>#} for the real values.
+
+To check for substitutions please use:
+$ ack-grep '{#[a-z_]+#}'
