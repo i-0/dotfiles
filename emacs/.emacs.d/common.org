@@ -36,6 +36,13 @@
 			;; helm
 			helm
 			helm-projectile
+
+			;; misc tools
+			restclient
+			urlenc
+
+			;; plantuml integration
+			plantuml-mode
 			))
 
   (dolist (p my-packages)
