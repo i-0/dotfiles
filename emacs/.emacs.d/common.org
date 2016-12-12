@@ -22,7 +22,20 @@
 			evil-org
 			evil-surround
 			evil-visualstar
+			evil-magit
 
+			;; ui
+			color-theme-sanityinc-tomorrow
+
+			;; project management
+			projectile
+
+			;; git integration
+			magit
+
+			;; helm
+			helm
+			helm-projectile
 			))
 
   (dolist (p my-packages)

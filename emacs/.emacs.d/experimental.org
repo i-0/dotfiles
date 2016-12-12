@@ -1,5 +1,63 @@
 #+TITLE: Experimental configuration and plugins
+#+OPTIONS: toc:nil ^:nil
+
+* Helm
+As per http://tuhdo.github.io/helm-intro.html, alternative approach
+here:
+https://dl.dropboxusercontent.com/u/3968124/sacha-emacs.html#unnumbered-14
 
 #+BEGIN_SRC emacs-lisp
-  (+ 1 1)
+  (require 'helm)
+  (require 'helm-config)
+  ;; The default "C-x c" is quite close to "C-x C-c", which quits Emacs.
+  ;; Changed to "C-c h". Note: We must set "C-c h" globally, because we
+  ;; cannot change `helm-command-prefix-key' once `helm-config' is loaded.
+  (global-set-key (kbd "C-c h") 'helm-command-prefix)
+  (global-unset-key (kbd "C-x c"))
+
+  (define-key helm-map (kbd "<tab>") 'helm-execute-persistent-action) ; rebind tab to run persistent action
+  (define-key helm-map (kbd "C-i") 'helm-execute-persistent-action) ; make TAB works in terminal
+  (define-key helm-map (kbd "C-z")  'helm-select-action) ; list actions using C-z
+
+
+  (when (executable-find "curl")
+    (setq helm-google-suggest-use-curl-p t))
+
+  (setq helm-split-window-in-side-p           t ; open helm buffer inside current window, not occupy whole other window
+	helm-move-to-line-cycle-in-source     t ; move to end or beginning of source when reaching top or bottom of source.
+	helm-ff-search-library-in-sexp        t ; search for library in `require' and `declare-function' sexp.
+	helm-scroll-amount                    8 ; scroll 8 lines other window using M-<next>/M-<prior>
+	helm-ff-file-name-history-use-recentf t)
+
+  (helm-mode 1)
+  (ido-mode -1) ;; Turn off ido mode just in case
 #+END_SRC
+
+
+* Projectile
+
+| shortcut | function             | effect                                 |
+| /        | <>                   |                                        |
+|----------+----------------------+----------------------------------------|
+| C-c p f  | projectile-find-file | opens file within project (using helm) |
+
+** projectile everywhere!
+#+BEGIN_SRC emacs-lisp
+  (projectile-global-mode)
+#+END_SRC
+
+** Use helm with projectile
+#+BEGIN_SRC emacs-lisp
+  (setq projectile-completion-system 'helm)
+  (helm-projectile-on)
+#+END_SRC
+
+
+* git integration
+From: http://magit.vc
+#+BEGIN_SRC emacs-lisp
+(global-set-key (kbd "C-x g") 'magit-status)
+(global-set-key (kbd "C-x M-g") 'magit-dispatch-popup)
+#+END_SRC
+
+* j2s-mode javascript "IDE"
