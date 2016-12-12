@@ -60,4 +60,27 @@ From: http://magit.vc
 (global-set-key (kbd "C-x M-g") 'magit-dispatch-popup)
 #+END_SRC
 
-* j2s-mode javascript "IDE"
+
+* TODO j2s-mode javascript "IDE"
+
+* org-mode
+** babel
+#+BEGIN_SRC emacs-lisp
+  (org-babel-do-load-languages
+   'org-babel-load-languages
+   '((plantuml . t)
+     (dot . t)
+     (sql . t)
+     (python . t)
+     (gnuplot . t)
+     (clojure .t)
+     (R . t)))
+#+END_SRC
+*** plantuml integration
+Allows plantuml-mode when using C-c ' to edit the src block.
+
+#+BEGIN_SRC emacs-lisp
+  (add-to-list 'org-src-lang-modes (quote ("plantuml" . puml)))
+  (setq org-plantuml-jar-path (expand-file-name "~/Applications/plantuml.jar"))
+  (setq org-src-fontify-natively t)
+#+END_SRC
