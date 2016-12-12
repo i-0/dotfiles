@@ -9,7 +9,9 @@
 ;; Load the rest of the packages
 (setq package-enable-at-startup nil)
 
+;; Load literate emacs setup modules
 (org-babel-load-file "~/.emacs.d/common.org")
 (org-babel-load-file "~/.emacs.d/evil.org")
+(org-babel-load-file "~/.emacs.d/ui.org")
 (org-babel-load-file "~/.emacs.d/experimental.org")
 
