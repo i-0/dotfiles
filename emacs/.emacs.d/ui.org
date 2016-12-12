@@ -66,6 +66,7 @@ Better use 14 point PragmataPro
 
 #+END_SRC
 
+
 * Uncomment to control initial OS window size
 #+BEGIN_SRC emacs-lisp
   ;; (setq initial-frame-alist '((top . 0) (left . 0) (width . 177) (height . 53)))
