@@ -24,9 +24,6 @@
 			evil-visualstar
 			evil-magit
 
-			;; ui
-			color-theme-sanityinc-tomorrow
-
 			;; project management
 			projectile
 
@@ -43,6 +40,10 @@
 
 			;; plantuml integration
 			plantuml-mode
+
+			;; javascript
+			js2-mode
+			ac-js2
 			))
 
   (dolist (p my-packages)
