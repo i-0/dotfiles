@@ -5,8 +5,8 @@
   (add-to-list 'package-archives '("marmalade" . "http://marmalade-repo.org/packages/") t)
   (add-to-list 'package-archives '("tromey"    . "http://tromey.com/elpa/") t)
   (add-to-list 'package-archives '("melpa"     . "http://melpa.milkbox.net/packages/") t)
-  (add-to-list 'package-archives '("org"       . "http://orgmode.org/elpa/"))
-  (add-to-list 'package-archives '("gnu"       . "http://elpa.gnu.org/packages/"))
+  (add-to-list 'package-archives '("org"       . "http://orgmode.org/elpa/") t)
+  (add-to-list 'package-archives '("gnu"       . "http://elpa.gnu.org/packages/") t)
 
   (package-initialize)
 
@@ -22,7 +22,6 @@
 			evil-org
 			evil-surround
 			evil-visualstar
-			evil-magit
 
 			;; project management
 			projectile
@@ -53,7 +52,7 @@
 #+END_SRC
 
 
-* Session persitence
+* Session persistenece
 - buffers
 - mini buffer history
 - kill-ring
@@ -78,7 +77,7 @@ Select expanding region in visual mode.
 | , v (normal mode) | er/expand-region | expand from word, big word, line to ... |
 
 #+BEGIN_SRC emacs-lisp
-(require 'expand-region)
-(global-set-key (kbd "C-@") 'er/expand-region)
-(evil-leader/set-key "v" 'er/expand-region)
+  (require 'expand-region)
+  (global-set-key (kbd "C-@") 'er/expand-region)
+  (evil-leader/set-key "v" 'er/expand-region)
 #+END_SRC
