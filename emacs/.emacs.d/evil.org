@@ -17,6 +17,7 @@
   (evil-leader/set-key "t" 'align-string)
 #+END_SRC
 
+
 * Keybindings
 ** evil-mode window movement
 #+BEGIN_SRC emacs-lisp
