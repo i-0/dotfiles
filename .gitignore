@@ -10,3 +10,7 @@ tags
 /emacs/.emacs.d/auto-save-list/*
 /emacs/.emacs.d/elpa/*
 /emacs/.emacs.d/shu.org
+/emacs/.emacs.d/.emacs.desktop
+/emacs/.emacs.d/.emacs.desktop.lock
+/emacs/.emacs.d/common.org[*Org Src common.org[ emacs-lisp ]*]
+/emacs/.emacs.d/history
