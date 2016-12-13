@@ -92,3 +92,10 @@ Allows plantuml-mode when using C-c ' to edit the src block.
   (setq org-plantuml-jar-path (expand-file-name "~/Applications/plantuml.jar"))
   (setq org-src-fontify-natively t)
 #+END_SRC
+
+
+* TODO anzu with evil integration
+Seems to be of utility when refactoring names.
+
+From: https://github.com/syohex/emacs-anzu
+With: https://github.com/syohex/emacs-evil-anzu
