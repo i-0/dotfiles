@@ -37,6 +37,7 @@
 			;; misc tools
 			restclient
 			urlenc
+			expand-region
 
 			;; plantuml integration
 			plantuml-mode
@@ -49,4 +50,35 @@
   (dolist (p my-packages)
     (when (not (package-installed-p p))
       (package-install p)))
+#+END_SRC
+
+
+* Session persitence
+- buffers
+- mini buffer history
+- kill-ring
+- regex search history
+
+#+BEGIN_SRC emacs-lisp
+  (desktop-save-mode 1)
+  (savehist-mode 1)
+  (setq savehist-additional-variables '(kill-ring search-ring regexp-search-ring))
+#+END_SRC
+
+
+* Setup expand-region
+From here: http://emacsrocks.com/e09.html
+
+Select expanding region in visual mode.
+- selection within braces or quotes
+- word, big word, line , paragraph, ... up to whole buffer
+| command           | function         | effect                                  |
+| /                 | <>               |                                         |
+|-------------------+------------------+-----------------------------------------|
+| , v (normal mode) | er/expand-region | expand from word, big word, line to ... |
+
+#+BEGIN_SRC emacs-lisp
+(require 'expand-region)
+(global-set-key (kbd "C-@") 'er/expand-region)
+(evil-leader/set-key "v" 'er/expand-region)
 #+END_SRC
