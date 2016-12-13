@@ -10,8 +10,10 @@ a matter of preference and may require some fiddling to match your
 preferences
 
 * Show line numbers
+Commented because does not play nice with leuven theme and org-mode
+files.
 #+BEGIN_SRC emacs-lisp
-(global-linum-mode)
+;; (global-linum-mode)
 #+END_SRC
 
 
