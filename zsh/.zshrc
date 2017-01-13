@@ -44,11 +44,15 @@ plugins=(git mvn debian autojump)
 
 source $ZSH/oh-my-zsh.sh
 
+# not sure if this is needed?
+source /usr/share/autojump/autojump.zsh
+
 # Customize to your needs...
-#export PATH=$PATH:/home/i0/Scripts:/home/i0/Shared/Java/jdk1.6.active//bin:/usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games:/usr/local/plan9/bin
+export PATH=$PATH:${HOME}/Scripts:${HOME}/bin:${HOME}/Scripts/Launcher
 
 # Disable title updates in _tmux_
 DISABLE_AUTO_TITLE=true
 
 alias ducks='du -cks * |sort -rn |head -11'
 alias week='ncal -w'
+alias em='emacsclient -c'
