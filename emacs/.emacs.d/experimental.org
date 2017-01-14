@@ -233,3 +233,34 @@ from: http://www.emacswiki.org/emacs/FlySpell
 	      (define-clojure-indent (facts 1))))
 #+END_SRC
 
+
+** org-mode babel
+
+* UI
+#+BEGIN_SRC emacs-lisp
+  ;; Highlights matching parenthesis
+  (show-paren-mode 1)
+
+  ;; Highlight current line
+  (global-hl-line-mode 1)
+#+END_SRC
+
+* eclimd
+from: http://www.goldsborough.me/emacs,/java/2016/02/24/22-54-16-setting_up_emacs_for_java_development/
+from: http://eclim.org/install.html
+
+Enable eclim for java files.
+#+BEGIN_SRC emacs-lisp
+(custom-set-variables
+  '(eclim-eclipse-dirs '("~/Applications/eclipse"))
+  '(eclim-executable "~/Applications/eclipse/eclim"))
+  '(eclimd-executable "~/Applications/eclipse/eclimd"))
+
+(require 'eclim)
+(add-hook 'java-mode-hook' 'eclim-mode)
+#+END_SRC
+
+* TODO smart-tab-mode (indent with tabs and align with spaces) :FIXME:DEACTVIATED:
+#+BEGIN_SRC emacs-lisp
+;;(smart-tabs-insinuate 'java)
+#+END_SRC
