@@ -1,54 +1,69 @@
 * Package management
 #+BEGIN_SRC emacs-lisp
-  (require 'package)
+    (require 'package)
 
-  (add-to-list 'package-archives '("marmalade" . "http://marmalade-repo.org/packages/") t)
-  (add-to-list 'package-archives '("tromey"    . "http://tromey.com/elpa/") t)
-  (add-to-list 'package-archives '("melpa"     . "http://melpa.milkbox.net/packages/") t)
-  (add-to-list 'package-archives '("org"       . "http://orgmode.org/elpa/") t)
-  (add-to-list 'package-archives '("gnu"       . "http://elpa.gnu.org/packages/") t)
+    (add-to-list 'package-archives '("marmalade" . "http://marmalade-repo.org/packages/") t)
+    (add-to-list 'package-archives '("tromey"    . "http://tromey.com/elpa/") t)
+    (add-to-list 'package-archives '("melpa"     . "http://melpa.milkbox.net/packages/") t)
+    (add-to-list 'package-archives '("org"       . "http://orgmode.org/elpa/") t)
+    (add-to-list 'package-archives '("gnu"       . "http://elpa.gnu.org/packages/") t)
 
-  (package-initialize)
+    (package-initialize)
 
-  (when (not package-archive-contents)
-    (package-refresh-contents))
+    (when (not package-archive-contents)
+      (package-refresh-contents))
 
-  (defvar my-packages '(
-			;; evil
-			evil
-			evil-leader
-			evil-magit
-			evil-nerd-commenter
-			evil-org
-			evil-surround
-			evil-visualstar
+    (defvar my-packages '(
+                          ;; evil
+                          evil
+                          evil-leader
+                          evil-magit
+                          evil-nerd-commenter
+                          evil-org
+                          evil-surround
+                          evil-visualstar
 
-			;; project management
-			projectile
+                          ;; project management
+                          projectile
 
-			;; git integration
-			magit
+                          ;; git integration
+                          magit
 
-			;; helm
-			helm
-			helm-projectile
+                          ;; helm
+                          helm
+                          helm-projectile
 
-			;; misc tools
-			restclient
-			urlenc
-			expand-region
+                          ;; misc tools
+                          restclient
+                          urlenc
+                          expand-region
+                          ;smart-tabs-mode
+                          ;exec-path-from-shell
 
-			;; plantuml integration
-			plantuml-mode
+                          ;; plantuml integration
+                          plantuml-mode
 
-			;; javascript
-			js2-mode
-			ac-js2
-			))
+                          ;; java, eclipse integration
+                          eclim
 
-  (dolist (p my-packages)
-    (when (not (package-installed-p p))
-      (package-install p)))
+                          ;; javascript
+                          js2-mode
+                          ac-js2
+
+                          ;; clojure (experimental)
+                          cider
+                          clojure-mode
+                          paredit
+                          clojure-mode-extra-font-locking
+                          rainbow-delimiters
+
+                          ;; color-theme
+                          color-theme-sanityinc-solarized
+                          ))
+
+    (dolist (p my-packages)
+      (when (not (package-installed-p p))
+        (package-install p)))
 #+END_SRC
 
 
@@ -80,4 +95,17 @@ Select expanding region in visual mode.
   (require 'expand-region)
   (global-set-key (kbd "C-@") 'er/expand-region)
   (evil-leader/set-key "v" 'er/expand-region)
+#+END_SRC
+
+
+* Setup ace-jump-mode
+From mastering emacs: http://www.masteringemacs.org/article/making-tooltips-appear-in-echo-area
+#+BEGIN_SRC emacs-lisp
+(autoload
+  'ace-jump-mode
+  "ace-jump-mode"
+  "Emacs quick move minor mode"
+  t)
+(define-key global-map (kbd "C-c SPC") 'ace-jump-mode)
+(evil-leader/set-key "SPC" 'ace-jump-mode)
 #+END_SRC
