@@ -93,6 +93,18 @@ Allows plantuml-mode when using C-c ' to edit the src block.
   (setq org-src-fontify-natively t)
 #+END_SRC
 
+*** define for which langs babel asks for confirmation before executing code
+The following langs are whitelisted to skip tedious questions:
+- dot
+- plantuml
+#+BEGIN_SRC emacs-lisp
+(defun my-org-confirm-babel-evaluate (lang body)
+  (not (or (string= lang "plantuml")
+	   (string= lang "dot"))))
+
+(setq org-confirm-babel-evaluate 'my-org-confirm-babel-evaluate)
+#+END_SRC
+
 
 * TODO anzu with evil integration
 Seems to be of utility when refactoring names.
