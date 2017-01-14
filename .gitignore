@@ -14,3 +14,6 @@ tags
 /emacs/.emacs.d/.emacs.desktop.lock
 /emacs/.emacs.d/common.org[*Org Src common.org[ emacs-lisp ]*]
 /emacs/.emacs.d/history
+/emacs/.emacs.d/cider-history
+/emacs/.emacs.d/common.html
+/emacs/.emacs.d/experimental.html
