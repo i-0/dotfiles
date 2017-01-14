@@ -111,3 +111,17 @@ Seems to be of utility when refactoring names.
 
 From: https://github.com/syohex/emacs-anzu
 With: https://github.com/syohex/emacs-evil-anzu
+
+* misc UI improvements
+** Show tooltips in echo area
+From mastering emacs: http://www.masteringemacs.org/article/making-tooltips-appear-in-echo-area
+#+BEGIN_SRC emacs-lisp
+(tooltip-mode -1)
+(setq tooltip-use-echo-area t)
+#+END_SRC
+
+** Simplify confirmation dialogs from "yes/no" to "y/n"
+#+BEGIN_SRC emacs-lisp
+(fset 'yes-or-no-l 'y-or-n-p)
+#+END_SRC
+
