@@ -33,9 +33,7 @@ https://dl.dropboxusercontent.com/u/3968124/sacha-emacs.html#unnumbered-14
   (ido-mode -1) ;; Turn off ido mode just in case
 #+END_SRC
 
-
 * Projectile
-
 | shortcut | function             | effect                                 |
 | /        | <>                   |                                        |
 |----------+----------------------+----------------------------------------|
@@ -245,22 +243,46 @@ from: http://www.emacswiki.org/emacs/FlySpell
   (global-hl-line-mode 1)
 #+END_SRC
 
-* eclimd
+
+* SQL
+from: https://truongtx.me/2014/08/23/setup-emacs-as-an-sql-database-client
+To connect use sql-connect function and interactively choose DB.
+
+The following entries are no real world examples.
+#+BEGIN_SRC emacs-lisp
+  (setq sql-connection-alist
+        '((local-db
+          (sql-product 'mysql)
+           (sql-server "127.0.0.1")
+           (sql-port 3306)
+           (sql-user "root")
+           (sql-password "waymoresecret")
+           (sql-database "test"))))
+#+END_SRC
+
+* TODO eclimd						  :FIXME:DEACTIVATED:
 from: http://www.goldsborough.me/emacs,/java/2016/02/24/22-54-16-setting_up_emacs_for_java_development/
 from: http://eclim.org/install.html
 
+- [ ] Copy from workstation setup
+- [ ] Install vanilla eclipse
+- [ ] Install eclimd
 Enable eclim for java files.
 #+BEGIN_SRC emacs-lisp
-(custom-set-variables
-  '(eclim-eclipse-dirs '("~/Applications/eclipse"))
-  '(eclim-executable "~/Applications/eclipse/eclim"))
-  '(eclimd-executable "~/Applications/eclipse/eclimd"))
+  ;; (custom-set-variables
+  ;;   '(eclim-eclipse-dirs '("~/Applications/eclipse"))
+  ;;   '(eclim-executable "~/Applications/eclipse/eclim"))
+  ;;   '(eclimd-executable "~/Applications/eclipse/eclimd"))
 
-(require 'eclim)
-(add-hook 'java-mode-hook' 'eclim-mode)
+  ;; (require 'eclim)
+  ;; (add-hook 'java-mode-hook' 'eclim-mode)
 #+END_SRC
 
 * TODO smart-tab-mode (indent with tabs and align with spaces) :FIXME:DEACTVIATED:
+Currently editing files in eclipse and emacs at the same time yields
+conflicts with the tabs/spaces handling. My intention is to align both
+editors to produce the same indention and whitespace.
+
 #+BEGIN_SRC emacs-lisp
 ;;(smart-tabs-insinuate 'java)
 #+END_SRC
