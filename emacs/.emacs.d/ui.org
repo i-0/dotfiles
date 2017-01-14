@@ -48,7 +48,8 @@ for a more technical explanation.
 
 Or simply use the build in leuven theme.
 #+BEGIN_SRC emacs-lisp
-  (load-theme 'leuven t)
+  ;; leuven, sanityinc-solarized-light
+  (when (display-graphic-p) (load-theme 'sanityinc-solarized-light t))
 #+END_SRC
 
 
