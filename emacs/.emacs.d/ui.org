@@ -53,22 +53,30 @@ Or simply use the build in leuven theme.
 #+END_SRC
 
 
+* Default font
+
 * Increase font size for better readability
 Uncomment the lines below by removing semicolons and play with the
 values in order to set the width (in characters wide) and height
 (in lines high) Emacs will have whenever you start it
 
-#+BEGIN_SRC emacs-listp
-  ;; (set-face-attribute 'default nil :height 140)
-#+END_SRC
-
-Better use 14 point PragmataPro
 #+BEGIN_SRC emacs-lisp
-(custom-set-faces
- '(default ((t (:family "PragmataPro" :foundry "unknown" :slant normal :weight normal :height 142 :width normal)))))
-
+  ;; (custom-set-faces
+  ;;  '(default ((t (
+  ;;              :family "PragmataPro"
+  ;;              :foundry "unknown"
+  ;;              :slant normal
+  ;;              :weight normal
+  ;;              :height 142
+  ;;              :width normal)))))
 #+END_SRC
 
+Add hotkeys to change font size in the fly
+#+BEGIN_SRC emacs-lisp
+(global-set-key (kbd "C-+") 'text-scale-increase)
+(global-set-key (kbd "C-=") 'text-scale-increase)
+(global-set-key (kbd "C--") 'text-scale-decrease)
+#+END_SRC
 
 * Uncomment to control initial OS window size
 #+BEGIN_SRC emacs-lisp

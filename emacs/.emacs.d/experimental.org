@@ -286,3 +286,10 @@ editors to produce the same indention and whitespace.
 #+BEGIN_SRC emacs-lisp
 ;;(smart-tabs-insinuate 'java)
 #+END_SRC
+
+* fix exec-path-issue
+#+BEGIN_SRC emacs-lisp
+  (require 'exec-path-from-shell) ;; if not using the ELPA package
+  (exec-path-from-shell-initialize)
+
+#+END_SRC

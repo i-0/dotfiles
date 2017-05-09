@@ -1,69 +1,72 @@
 * Package management
 #+BEGIN_SRC emacs-lisp
-    (require 'package)
+  (require 'package)
 
-    (add-to-list 'package-archives '("marmalade" . "http://marmalade-repo.org/packages/") t)
-    (add-to-list 'package-archives '("tromey"    . "http://tromey.com/elpa/") t)
-    (add-to-list 'package-archives '("melpa"     . "http://melpa.milkbox.net/packages/") t)
-    (add-to-list 'package-archives '("org"       . "http://orgmode.org/elpa/") t)
-    (add-to-list 'package-archives '("gnu"       . "http://elpa.gnu.org/packages/") t)
+  (add-to-list 'package-archives '("marmalade" . "http://marmalade-repo.org/packages/") t)
+  (add-to-list 'package-archives '("tromey"    . "http://tromey.com/elpa/") t)
+  (add-to-list 'package-archives '("melpa"     . "http://melpa.milkbox.net/packages/") t)
+  (add-to-list 'package-archives '("org"       . "http://orgmode.org/elpa/") t)
+  (add-to-list 'package-archives '("gnu"       . "http://elpa.gnu.org/packages/") t)
 
-    (package-initialize)
+  (package-initialize)
 
-    (when (not package-archive-contents)
-      (package-refresh-contents))
+  (when (not package-archive-contents)
+    (package-refresh-contents))
 
-    (defvar my-packages '(
-                          ;; evil
-                          evil
-                          evil-leader
-                          evil-magit
-                          evil-nerd-commenter
-                          evil-org
-                          evil-surround
-                          evil-visualstar
+  (defvar my-packages '(
+                        ;; evil
+                        evil
+                        evil-leader
+                        evil-magit
+                        evil-nerd-commenter
+                        evil-org
+                        evil-surround
+                        evil-visualstar
 
-                          ;; project management
-                          projectile
+                        ;; project management
+                        projectile
 
-                          ;; git integration
-                          magit
+                        ;; git integration
+                        magit
 
-                          ;; helm
-                          helm
-                          helm-projectile
+                        ;; helm
+                        helm
+                        helm-projectile
 
-                          ;; misc tools
-                          restclient
-                          urlenc
-                          expand-region
-                          ;smart-tabs-mode
-                          ;exec-path-from-shell
+                        ;; misc tools
+                        restclient
+                        urlenc
+                        expand-region
+                        ;smart-tabs-mode
+                        ;exec-path-from-shell
 
-                          ;; plantuml integration
-                          plantuml-mode
+                        ;; plantuml integration
+                        plantuml-mode
 
-                          ;; java, eclipse integration
-                          eclim
+                        ;; java, eclipse integration
+                        eclim
 
-                          ;; javascript
-                          js2-mode
-                          ac-js2
+                        ;; javascript
+                        js2-mode
+                        ac-js2
 
-                          ;; clojure (experimental)
-                          cider
-                          clojure-mode
-                          paredit
-                          clojure-mode-extra-font-locking
-                          rainbow-delimiters
+                        ;; clojure (experimental)
+                        cider
+                        clojure-mode
+                        paredit
+                        clojure-mode-extra-font-locking
+                        rainbow-delimiters
 
-                          ;; color-theme
-                          color-theme-sanityinc-solarized
-                          ))
+                        ;; color-theme
+                        color-theme-sanityinc-solarized
 
-    (dolist (p my-packages)
-      (when (not (package-installed-p p))
-        (package-install p)))
+                        ;; macos
+                        exec-path-from-shell
+                        ))
+
+  (dolist (p my-packages)
+    (when (not (package-installed-p p))
+      (package-install p)))
 #+END_SRC
 
 
