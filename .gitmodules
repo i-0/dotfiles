@@ -54,7 +54,11 @@
 	url = https://github.com/bbatsov/prelude.git
 [submodule "prelude"]
 	path = prelude
-	url = https://github.com/bbatsov/prelude.git
+	url = https://github.com/i-0/prelude.git
 [submodule "mobyte-emacs-setup/emacs.config"]
 	path = mobyte-emacs-setup/emacs.config
 	url = https://github.com/mobyte/emacs.config.git
+[submodule "emacs.config"]
+	path = emacs.config
+	url = https://github.com/mobyte/emacs.config.git
+
