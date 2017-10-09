@@ -18,3 +18,6 @@ tags
 /emacs/.emacs.d/common.html
 /emacs/.emacs.d/experimental.html
 /emacs/.emacs.d/async-bytecomp.log
+*/.lein/self-installs
+*/.lein/repl-history
+*.swp
