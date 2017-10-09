@@ -40,12 +40,18 @@ ZSH_THEME="robbyrussell"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git mvn debian autojump)
+plugins=(git mvn autojump)
 
 source $ZSH/oh-my-zsh.sh
 
 # not sure if this is needed?
-source /usr/share/autojump/autojump.zsh
+source /usr/local/Cellar/autojump/22.5.1/share/autojump/autojump.zsh
+
+# powerline (WIP)
+#export LC_ALL=en_US.UTF-8
+#export LANG=en_US.UTF-8
+#export POWERLINE_CONFIG_COMMAND=${HOME}/Library/Python/3.7/bin/powerline-config
+#. ${HOME}/Library/Python/2.7/lib/python/site-packages/powerline/bindings/zsh/powerline.zsh
 
 # Customize to your needs...
 export PATH=$PATH:${HOME}/Scripts:${HOME}/bin:${HOME}/Scripts/Launcher
@@ -56,3 +62,4 @@ DISABLE_AUTO_TITLE=true
 alias ducks='du -cks * |sort -rn |head -11'
 alias week='ncal -w'
 alias em='emacsclient -c'
+alias zzz='pmset displaysleepnow'
