@@ -49,6 +49,3 @@
 [submodule "zsh/oh-my-zsh"]
 	path = zsh/oh-my-zsh
 	url = https://github.com/robbyrussell/oh-my-zsh.git
-[submodule "mobyte-emacs-setup/emacs.config"]
-	path = mobyte-emacs-setup/emacs.config
-	url = https://github.com/mobyte/emacs.config.git
