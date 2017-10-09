@@ -43,7 +43,7 @@ set termencoding=utf-8
 
 "--- colorscheme settings ---
 set background=dark
-colorscheme solarized
+"colorscheme solarized
 
 "--- airline settings ---
 set laststatus=2
